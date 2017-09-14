@@ -61,7 +61,7 @@ def getTweets():
 	for tekst in tekstSum:
 		tekstSum2 += ' ' + tekst
 	postURL = 'https://api.twitter.com/1.1/statuses/update.json?' + urllib.parse.urlencode({'status': tekstSum2})
-	post(client.request(postURL,'POST'))
+	print(client.request(postURL,'POST'))
 
 
 #regexp
