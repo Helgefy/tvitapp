@@ -30,7 +30,9 @@ def _wordFrequency(words):
 			if w not in stopwordlist:
 				freq[w] += 1
 	m = float(max(freq.values()))
-	keys = freq.keys()
+	keys = []
+	for w in freq.keys():
+		keys.append[w]
 	for w in keys:
 		freq[w] = freq[w]/m
 		if freq[w] > maxCut or freq[w] < minCut:
