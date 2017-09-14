@@ -5,7 +5,7 @@ import json
 import oauth2 as oauth
 from .models import Tweet, myTweet
 from django.utils import timezone
-import urllib2, urllib
+import urllib
 import re
 from .summarizer import summarize
 
@@ -43,8 +43,8 @@ def getTweets():
 		tweets = json.loads(data)
 		if tweets['statuses']:#Dytter tweetene i databasen og tar vare paa tekst
 			for tweet in tweets['statuses']:
-				req=urllib2.Request(embedUrl+tweet['id_str'])
-				resp=urllib2.urlopen(req)
+				req=urllib.request.Request(embedUrl+tweet['id_str'])
+				resp=urllib.request.urlopen(req)
 				html = json.load(resp)['html']
 				Tweet.objects.create(tweet_id=tweet['id_str'],text=tweet['full_text'],publish_date=timezone.now().date(),html=html)				
 				textSum += ' ' + tweet['full_text']
