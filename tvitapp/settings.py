@@ -145,12 +145,12 @@ CELERY_ACCEPT_CONTENT =  ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELER_RESULT_SERIALIZER = 'json'
 CELERY_TUMESONE = 'Europe/London'
-BROKER_URL = 'amqp://guest:guest@localhost:5672/hosten'
-CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672/hosten'
+BROKER_URL = 'amqp://Tvw3I51k:Ltof9MJZlIWPLZQoQCl48CA6XoQyBxHt@brown-clover-462.bigwig.lshift.net:10823/D70Hofy7mYca'
+CELERY_BROKER_URL = 'amqp://Tvw3I51k:Ltof9MJZlIWPLZQoQCl48CA6XoQyBxHt@brown-clover-462.bigwig.lshift.net:10823/D70Hofy7mYca'
 CELERY_BEAT_SCHEDULE = {
     'get-tweets': {
         'task': 'gatherer.tasks.getTweets',
-        'schedule': crontab(hour=18)
+        'schedule': crontab(minute='*/3')
     },
         'get-tweets2': {
         'task': 'gatherer.tasks.getTweets',
