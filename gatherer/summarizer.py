@@ -3,7 +3,9 @@ from nltk.corpus import stopwords
 from collections import defaultdict
 from string import punctuation
 from heapq import nlargest
+import nltk
 
+nltk.download(['punkt', 'stopwords','treebank'])
 
 def summarize(text, n):
 	sents = sent_tokenize(text)
