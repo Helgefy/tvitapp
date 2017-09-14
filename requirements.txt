@@ -17,3 +17,4 @@ six==1.10.0
 static3==0.7.0
 update==0.4.4
 vine==1.1.4
+urllib2
