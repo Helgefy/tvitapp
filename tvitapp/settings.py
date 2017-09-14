@@ -25,7 +25,7 @@ SECRET_KEY = 'qcu5jkaq8qzpx*pzlm5*_@!byluic%_%od59^667vg6=meu1=t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [*]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -151,7 +151,7 @@ CELERY_BEAT_SCHEDULE = {
     'get-tweets': {
         'task': 'gatherer.tasks.getTweets',
         'schedule': crontab(hour=18)
-    }
+    },
         'get-tweets2': {
         'task': 'gatherer.tasks.getTweets',
         'schedule': crontab(hour=6)
