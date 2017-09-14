@@ -32,7 +32,7 @@ def _wordFrequency(words):
 	m = float(max(freq.values()))
 	freqkeys = []
 	for w in freq.keys():
-		freqkeys.append[w]
+		freqkeys.append(w)
 	for w in freqkeys:
 		freq[w] = freq[w]/m
 		if freq[w] > maxCut or freq[w] < minCut:
