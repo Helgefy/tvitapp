@@ -7,7 +7,7 @@ from django.db import models
 
 class Tweet(models.Model):
 	tweet_id = models.CharField(max_length=100)
-	text = models.CharField(max_length=160)
+	text = models.CharField(max_length=300)
 	publish_date = models.DateField(auto_now=True,auto_now_add=False)
 	html = models.TextField()
 
