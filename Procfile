@@ -1,0 +1,1 @@
+web: gunicorn tvitapp.wsgi --log-file -
