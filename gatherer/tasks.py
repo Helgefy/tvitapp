@@ -2,6 +2,7 @@ from __future__ import absolute_import, unicode_literals
 from celery import shared_task
 from celery.utils.log import get_task_logger
 import json
+import os
 import oauth2 as oauth
 from .models import Tweet, myTweet
 from django.utils import timezone
@@ -14,10 +15,10 @@ print('Task file')
 logger=get_task_logger(__name__)
 
 
-consumer_key =  CONSUMER_KEY
-consumer_secret = CONSUMER_SECRET 
-access_token = ACCESS_TOKEN
-access_token_secret = ACCESS_TOKEN_SECRET
+consumer_key =  os.environ.get('CONSUMER_KEY')
+consumer_secret = os.environ.get('CONSUMER_SECRET ')
+access_token = os.environ.get('ACCESS_TOKEN')
+access_token_secret = os.environ.get('ACCESS_TOKEN_SECRET')
 
 consumer = oauth.Consumer(key=consumer_key,secret=consumer_secret)
 access_token = oauth.Token(key=access_token,secret=access_token_secret)
